@@ -1,5 +1,7 @@
+## How to play github online testing??
 
-touch .travis.yml   
+touch .travis.yml    
+  
 ````
 language: php
 
@@ -17,4 +19,12 @@ script:
   - vendor/bin/phpcs app --standard=PSR2
 ````  
 
-composer require --dev squizlabs/php_codesniffer   
+composer require --dev squizlabs/php_codesniffer 
+
+Check code before push code to github~!  
+````  
+vendor/bin/phpunit
+vendor/bin/phpcs app --standard=PSR2  
+````  
+
+ 
