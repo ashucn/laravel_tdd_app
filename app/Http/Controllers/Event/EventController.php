@@ -9,7 +9,8 @@ use App\Http\Controllers\Controller;
 
 class EventController extends Controller
 {
-    public function index ()
+
+    public function index()
     {
         $today = Carbon::today()->format('Y-m-d');
         $upcomingEvents = Event::where('end_date', '>', $today)
