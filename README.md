@@ -21,7 +21,7 @@ script:
 
 composer require --dev squizlabs/php_codesniffer 
 
-Check code before push code to github~!  
+Check code before push code to github~!(https://travis-ci.org)  
 ````  
 vendor/bin/phpunit
 vendor/bin/phpcs app --standard=PSR2  
