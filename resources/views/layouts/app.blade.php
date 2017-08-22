@@ -15,7 +15,6 @@
 </head>
 <body>
 <div id="app">
-
   @include('includes.topnav')
   @yield('content')
 </div>

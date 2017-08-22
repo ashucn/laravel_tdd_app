@@ -22,7 +22,7 @@ $url = Request::route()->getName();
     <div class="collapse navbar-collapse" id="app-navbar-collapse">
       <!-- Left Side Of Navbar -->
       <ul class="nav navbar-nav">
-        <li @if($url == 'events' || $url= 'event-view') class="active" @endif ><a href="{{route('events')}}">Events</a></li>
+        <li @if(Request::is('events*')) class="active" @endif ><a href="{{route('events')}}">Events</a></li>
       </ul>
 
       <!-- Right Side Of Navbar -->
