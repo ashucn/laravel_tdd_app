@@ -8,13 +8,13 @@
   <!-- CSRF Token -->
   <meta name="csrf-token" content="{{ csrf_token() }}">
 
-  <title>TDD EVENT APP</title>
+  <title> EVENT APP Demo</title>
 
   <!-- Styles -->
   <link href="{{ mix('css/app.css') }}" rel="stylesheet">
   @yield('styles')
 </head>
-<body>
+<body class="body_event">
 <div id="app">
 @include('includes.topnav')
 

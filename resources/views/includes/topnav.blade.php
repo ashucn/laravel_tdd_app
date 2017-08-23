@@ -1,7 +1,7 @@
 <?php
 $url = Request::route()->getName();
 ?>
-<nav class="navbar navbar-default navbar-static-top">
+<nav class="navbar navbar-default navbar-fixed-top">
   <div class="container">
     <div class="navbar-header">
 
@@ -28,10 +28,15 @@ $url = Request::route()->getName();
       <!-- Right Side Of Navbar -->
       <ul class="nav navbar-nav navbar-right">
         <!-- Authentication Links -->
-        @if (Auth::guest())
+        @guest
+          @if(!Request::is('login'))
           <li><a href="{{ route('login') }}">Login</a></li>
+          @endif
+          @if(!Request::is('register'))
           <li><a href="{{ route('register') }}">Register</a></li>
-        @else
+            @endif
+        @endguest
+        @auth
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
               {{ Auth::user()->name }} <span class="caret"></span>
@@ -41,7 +46,7 @@ $url = Request::route()->getName();
               <li>
                 <a href="{{ route('logout') }}"
                    onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
+                   document.getElementById('logout-form').submit();">
                   Logout
                 </a>
 
@@ -51,7 +56,7 @@ $url = Request::route()->getName();
               </li>
             </ul>
           </li>
-        @endif
+        @endauth
       </ul>
     </div>
   </div>

@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="col-sm-6">
+<div class="col-sm-6 ">
 <h1>Upcoming Events</h1>
   @foreach($upcomingEvents as $ue)
     <div class="panel panel-default">

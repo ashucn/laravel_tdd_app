@@ -1,9 +1,10 @@
 @extends('layouts.app')
 
-@section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
+@section('content')<div class="container flex-center position-ref full-height">
+  <div class="col-md-6 hidden-xs">
+    <h1 class="title">Ashucn.us</h1>
+  </div>
+  <div class="col-md-6 col-xs-12">
             <div class="panel panel-default">
                 <div class="panel-heading">Register</div>
                 <div class="panel-body">
@@ -71,6 +72,5 @@
                 </div>
             </div>
         </div>
-    </div>
 </div>
 @endsection

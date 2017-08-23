@@ -2,7 +2,7 @@
 
 @section('content')
 
-  <div class="col-sm-8 col-sm-offset-2">
+  <div class="col-sm-12">
 
       <div class="panel panel-default">
         <div class="panel-heading">

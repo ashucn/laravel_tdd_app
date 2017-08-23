@@ -15,10 +15,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('events', 'Event\EventController@index')->name('events');
-Route::get('events/view/{event}', 'Event\EventController@show')->name('event-view');
+Route::group(['middleware' => 'auth', 'prefix' => 'events'], function () {
+    Route::get('/', 'Event\EventController@index')->middleware('auth')->name('events');
+    Route::get('/view/{event}', 'Event\EventController@show')->name('event-view');
+});
+
 
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', function () {
+    return redirect('/');
+})->name('home');
