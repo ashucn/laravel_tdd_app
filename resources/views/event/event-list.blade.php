@@ -27,7 +27,7 @@
               <strong>Start date: </strong>{{$ue->start_date}} <br>
               <strong>End date: </strong>{{$ue->end_date}}<br>
               <strong>Created by: </strong>{{$ue->creator->name}}<br><br>
-                {{$ue->description}}
+            {!!$ue->description!!}
             </div>
           </div>
 
@@ -66,7 +66,7 @@
               <strong>Start date: </strong>{{$pe->start_date}} <br>
               <strong>End date: </strong>{{$pe->end_date}}<br>
               <strong>Created by: </strong>{{$pe->creator->name}}<br><br>
-              {{$ue->description}}
+            {!!$pe->description!!}
             </div>
           </div>
 

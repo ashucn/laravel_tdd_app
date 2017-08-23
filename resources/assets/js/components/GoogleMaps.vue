@@ -1,6 +1,6 @@
 <template>
 <div class="EventLocation_Wrapper">
-<label for="location">Location</label>
+<label for="location">Please Input Address</label>
 <div id="location">
 <gmap-autocomplete @place_changed="setPlace($event)"></gmap-autocomplete>
   <gmap-map
@@ -21,6 +21,8 @@
 
 <input type="hidden" name="lat" v-model="location.lat">
 <input type="hidden" name="lng" v-model="location.lng">
+<input type="hidden" name="address" v-model="location.event_address">
+
 </div>
 
 </template>
@@ -29,17 +31,21 @@
 export default {
     data () {
       return {
-        location: {  lat: 34.05, lng: -118.22},
+        location: {  lat: 34.05, lng: -118.22, event_address: ""},
         markers: [{lat: 34.05, lng: -118.22}]
       }
     },
     methods:{
         setPlace(place){
+          console.log("setPlace: ", place.formatted_address);
           this.location = {
             lat: place.geometry.location.lat(),
-            lng: place.geometry.location.lng()
+            lng: place.geometry.location.lng(),
+            event_address: place.formatted_address
           }
-          $('#event_address').val(place.formatted_address);
+
+          $("#event_address").val(place.formatted_address);
+          console.log(this.location);
         },
         markerDrag (position){
           this.location = {
@@ -59,5 +65,6 @@ export default {
   margin-bottom: 20px;
   width: 100%;
   padding: 10px;
+  border: #dddddd 1px solid;
 }
 </style>

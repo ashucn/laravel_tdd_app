@@ -1,7 +1,7 @@
 ## How to play github online testing??
 
-touch .travis.yml    
-  
+touch .travis.yml
+
 ````
 language: php
 
@@ -17,19 +17,19 @@ before_script:
 script:
   - vendor/bin/phpunit
   - vendor/bin/phpcs app --standard=PSR2
-````  
+````
 
-composer require --dev squizlabs/php_codesniffer 
+composer require --dev squizlabs/php_codesniffer
 
-Check code before push code to github~!(https://travis-ci.org)  
-````  
+Check code before push code to github~!(https://travis-ci.org)
+````
 vendor/bin/phpunit
-vendor/bin/phpcs app --standard=PSR2  
-````  
+vendor/bin/phpcs app --standard=PSR2
+````
 
 
-#### Front-end Plugins:  
+#### Front-end Plugins:
 
-- [vue2-google-maps](https://www.npmjs.com/package/vue2-google-maps)    
+- [vue2-google-maps](https://www.npmjs.com/package/vue2-google-maps)
+- [CKEditor](https://ckeditor.com/builder)
 
- 

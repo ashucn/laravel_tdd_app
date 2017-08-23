@@ -17,7 +17,10 @@
 <body class="body_event">
 <div id="app">
 @include('includes.topnav')
+<div class="container">
+
 @yield('content')
+</div>
 </div>
 <!-- Scripts -->
 <script src="{{ mix('js/app.js') }}"></script>
