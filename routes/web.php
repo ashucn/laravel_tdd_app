@@ -15,14 +15,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::group(['middleware' => 'auth', 'prefix' => 'events'], function () {
-    Route::get('/', 'Event\EventController@index')->middleware('auth')->name('events');
-    Route::get('/view/{event}', 'Event\EventController@show')->name('event-view');
+Auth::routes();
+
+Route::group(['middleware' => 'auth', 'prefix' => 'events', 'namespace' => 'Event'], function () {
+    Route::get('/', 'EventController@index')->middleware('auth')->name('events');
+    Route::get('/view/{event}', 'EventController@show')->name('event-view');
+    Route::get('/add', 'EventController@add')->name('event-add');
+    Route::post('/store', 'EventController@store')->name('event-store');
 });
 
-
-
-Auth::routes();
 
 Route::get('/home', function () {
     return redirect('/');

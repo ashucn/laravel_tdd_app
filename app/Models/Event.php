@@ -14,7 +14,7 @@ class Event extends Model
         'description',
         'address',
         'lat',
-        'long',
+        'lng',
         'start_date',
         'end_date',
         'user_id',

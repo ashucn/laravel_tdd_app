@@ -27,4 +27,9 @@ vendor/bin/phpunit
 vendor/bin/phpcs app --standard=PSR2  
 ````  
 
+
+#### Front-end Plugins:  
+
+- [vue2-google-maps](https://www.npmjs.com/package/vue2-google-maps)    
+
  

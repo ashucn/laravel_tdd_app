@@ -1,13 +1,16 @@
 @extends('layouts.event')
 
 @section('content')
+<div class="col-md-6"></div>
+<div class="col-md-6"><a href="{{route('event-add')}}" class="btn btn-primary pull-right m-r-10">Add Events</a></div>
 
 <div class="col-sm-6 ">
-<h1>Upcoming Events</h1>
+
+  <h1>Upcoming Events</h1>
   @foreach($upcomingEvents as $ue)
     <div class="panel panel-default">
       <div class="panel-heading">
-        <h3><a href="{{route('event-view', $ue->id)}}">{{$ue->title}}</a></h3>
+        <h3><a href="{{route('event-view', $ue->id)}}">#{{$ue->id}} {{$ue->title}}</a></h3>
         <small><strong>Address:</strong> {{$ue->address}}</small>
       </div>
       <div class="panel-body">
@@ -45,7 +48,7 @@
   @foreach($pastEvents as $pe)
     <div class="panel panel-default">
       <div class="panel-heading">
-        <h3><a href="{{route('event-view', $pe->id)}}">{{$pe->title}}</a></h3>
+        <h3><a href="{{route('event-view', $pe->id)}}">#{{$pe->id}} {{$pe->title}}</a></h3>
         <small><strong>Address:</strong> {{$pe->address}}</small>
       </div>
       <div class="panel-body">

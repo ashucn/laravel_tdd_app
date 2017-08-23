@@ -15,9 +15,9 @@
           </div>
           <div id="map"></div>
           <table class="table table-striped m-t-20">
+            <tr><td>Address</td><td><a href="http://maps.apple.com/?q={{$event->lat}},{{$event->lng}}">{{$event->address}}</a></td></tr>
             <tr><td>Start date</td><td>{{$event->start_date}}</td></tr>
             <tr><td>End date</td><td>{{$event->end_date}}</td></tr>
-            <tr><td>Address</td><td>{{$event->address}}</td></tr>
             <tr><td>Created by</td><td>{{$event->creator->name}}</td></tr>
           </table>
         </div>
@@ -29,16 +29,16 @@
 
 <script>
   function initMap() {
-    var uluru = {
+    var event_address = {
       lat: {{$event->lat}},
-      lng: {{$event->long}}
+      lng: {{$event->lng}}
     };
     var map = new google.maps.Map(document.getElementById('map'), {
-      zoom: 4,
-      center: uluru
+      zoom: 12,
+      center: event_address
     });
     var maker = new google.maps.Marker({
-      position: uluru,
+      position: event_address,
       map: map
     });
   }

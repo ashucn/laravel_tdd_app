@@ -32,7 +32,7 @@ $factory->define(\App\Models\Event::class, function (Faker\Generator $faker) {
         'description' => $faker->paragraph(5),
         'address' => $faker->address,
         'lat' => $faker->latitude,
-        'long' => $faker->longitude,
+        'lng' => $faker->longitude,
         'start_date' => $start_date->format('Y-m-d'),
         'end_date' => $end_date->format('Y-m-d'),
         'user_id' => factory(\App\User::class)->create()->id,

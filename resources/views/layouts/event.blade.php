@@ -8,7 +8,7 @@
   <!-- CSRF Token -->
   <meta name="csrf-token" content="{{ csrf_token() }}">
 
-  <title> EVENT APP Demo</title>
+  <title>@yield('page_title')EVENT APP Demo</title>
 
   <!-- Styles -->
   <link href="{{ mix('css/app.css') }}" rel="stylesheet">
@@ -17,10 +17,8 @@
 <body class="body_event">
 <div id="app">
 @include('includes.topnav')
-
-</div>
-
 @yield('content')
+</div>
 <!-- Scripts -->
 <script src="{{ mix('js/app.js') }}"></script>
 @yield('scripts')
