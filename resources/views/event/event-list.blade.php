@@ -5,7 +5,8 @@
 <div class="col-md-6"><a href="{{route('event-add')}}" class="btn btn-primary pull-right m-r-10">Add Events</a></div>
 
 <div class="col-sm-6 ">
-
+  @include('includes.message.error')
+  @include('includes.message.success')
   <h1>Upcoming Events</h1>
   @foreach($upcomingEvents as $ue)
     <div class="panel panel-default">
@@ -27,7 +28,7 @@
               <strong>Start date: </strong>{{$ue->start_date}} <br>
               <strong>End date: </strong>{{$ue->end_date}}<br>
               <strong>Created by: </strong>{{$ue->creator->name}}<br><br>
-            {!!$ue->description!!}
+            {!! limit_words($ue->description, 30) !!}
             </div>
           </div>
 
@@ -66,7 +67,7 @@
               <strong>Start date: </strong>{{$pe->start_date}} <br>
               <strong>End date: </strong>{{$pe->end_date}}<br>
               <strong>Created by: </strong>{{$pe->creator->name}}<br><br>
-            {!!$pe->description!!}
+            {!! limit_words($pe->description, 30) !!}
             </div>
           </div>
 

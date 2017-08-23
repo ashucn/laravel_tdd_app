@@ -1,7 +1,7 @@
 @if ($errors->any())
-  <ol class="alert alert-danger" id="errormsg" >
     @foreach($errors->all() as $error)
-      <li>{{ $error }}</li>
+      <script>
+          toastr.error("{{ $error }}");
+      </script>
     @endforeach
-  </ol>
 @endif

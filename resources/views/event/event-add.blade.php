@@ -16,10 +16,6 @@
             <input type="text" class="form-control" name="title" id="event_title" placeholder="Event Title" value="{{old('title')}}">
           </div>
           <div class="form-group">
-            <label for="event_address">Address</label>
-            <input type="text" class="form-control" id="event_address" placeholder="Select Address From Map" disabled>
-          </div>
-          <div class="form-group">
             <label for="event_s_date">Start Date</label>
             <input type="date" class="form-control" name="start_date" id="event_s_date" placeholder="Start Date" >
           </div>
@@ -38,7 +34,7 @@
 {{--Google maps--}}
   <div class="col-md-6">
     <div class="panel panel-default">
-      <div class="panel-heading">Address</div>
+      <div class="panel-heading">Event Address</div>
 
       <div class="panel-body">
         <google-maps></google-maps>

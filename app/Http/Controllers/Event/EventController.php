@@ -58,6 +58,6 @@ class EventController extends Controller
         $event->save();
 //        dd($event);
 
-        return redirect()->back()->with('status', 'Add new event successfully');
+        return redirect(route('events'))->with('status', 'Add new event successfully');
     }
 }
