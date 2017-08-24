@@ -2,7 +2,7 @@
 
 @section('content')<div class="container flex-center position-ref full-height">
   <div class="col-md-6 hidden-xs">
-    <h1 class="title">Ashucn.us</h1>
+    <h1 class="title text-center">AshuCN.US</h1>
   </div>
   <div class="col-md-6 col-xs-12">
             <div class="panel panel-default">

@@ -12,19 +12,19 @@
         @include('includes.message.error')
         @include('includes.message.success')
           <div class="form-group">
-            <label for="event_title">Event Title</label>
+            <label for="event_title">* Event Title</label>
             <input type="text" class="form-control" name="title" id="event_title" placeholder="Event Title" value="{{old('title')}}">
           </div>
           <div class="form-group">
-            <label for="event_s_date">Start Date</label>
+            <label for="event_s_date">* Start Date</label>
             <input type="date" class="form-control" name="start_date" id="event_s_date" placeholder="Start Date" >
           </div>
           <div class="form-group">
-            <label for="event_e_date">End Date</label>
+            <label for="event_e_date">* End Date</label>
             <input type="date" class="form-control" name="end_date" id="event_e_date" placeholder="End Date" >
           </div>
           <div class="form-group">
-            <label for="event_description">Description</label>
+            <label for="event_description">* Description</label>
             <textarea name="description" class="form-control" id="event_description" cols="30" rows="10">{{old('description')}}</textarea>
           </div>
           <button type="submit" class="btn btn-success btn-block btn-lg">Submit</button>
@@ -34,7 +34,7 @@
 {{--Google maps--}}
   <div class="col-md-6">
     <div class="panel panel-default">
-      <div class="panel-heading">Event Address</div>
+      <div class="panel-heading">* Event Address</div>
 
       <div class="panel-body">
         <google-maps></google-maps>
