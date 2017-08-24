@@ -27,7 +27,7 @@
             <label for="event_description">* Description</label>
             <textarea name="description" class="form-control" id="event_description" cols="30" rows="10">{{old('description')}}</textarea>
           </div>
-          <button type="submit" class="btn btn-success btn-block btn-lg">Submit</button>
+          <button type="submit" class="btn btn-success btn-block btn-lg hidden-xs">Submit</button>
       </div>
     </div>
   </div>
@@ -40,6 +40,8 @@
         <google-maps></google-maps>
       </div>
     </div>
+
+    <button type="submit" class="btn btn-success btn-block btn-lg visible-xs-*">Submit</button>
   </div>
 </form>
 @endsection
