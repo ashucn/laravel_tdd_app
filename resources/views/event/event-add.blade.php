@@ -48,7 +48,7 @@
   <script src="{{mix('/js/vue2googlemaps.js')}}"></script>
   <script src="//cdn.ckeditor.com/4.7.2/standard/ckeditor.js"></script>
   <script>
-      const app = new Vue({
+      var app = new Vue({
           el: '#app',
           data :{
               lat: '34.0501695',
