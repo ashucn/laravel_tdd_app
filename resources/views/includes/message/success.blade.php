@@ -1,5 +1,5 @@
 @if (session('status'))
-  <div class="alert alert-success">
-    {{ session('status') }}
-  </div>
+    <script>
+        toastr.success("{{  session('status')  }}");
+    </script>
 @endif

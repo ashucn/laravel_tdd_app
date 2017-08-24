@@ -11,19 +11,20 @@
   @foreach($upcomingEvents as $ue)
     <div class="panel panel-default">
       <div class="panel-heading">
-        <h3><a href="{{route('event-view', $ue->id)}}">#{{$ue->id}} {{$ue->title}}</a></h3>
+        <h3><a href="{{route('event-view', $ue->slug)}}">#{{$ue->id}} {{$ue->title}}</a></h3>
         <small><strong>Address:</strong> {{$ue->address}}</small>
+        <a href="http://maps.apple.com/?q={{$ue->lat}},{{$ue->lng}}"><i class="fa fa-map-marker fa-2x" aria-hidden="true"></i></a>
       </div>
       <div class="panel-body">
         <div>
         </div>
         <div>
           <div class="media">
-            <div class="media-left">
+{{--            <div class="media-left">
               <a href="#">
                 <img class="media-object" src="..." alt="..." width="80" height="80">
               </a>
-            </div>
+            </div>--}}
             <div class="media-body">
               <strong>Start date: </strong>{{$ue->start_date}} <br>
               <strong>End date: </strong>{{$ue->end_date}}<br>
@@ -49,20 +50,18 @@
   @foreach($pastEvents as $pe)
     <div class="panel panel-default">
       <div class="panel-heading">
-        <h3><a href="{{route('event-view', $pe->id)}}">#{{$pe->id}} {{$pe->title}}</a></h3>
+        <h3><a href="{{route('event-view', $pe->slug)}}">#{{$pe->id}} {{$pe->title}}</a></h3>
         <small><strong>Address:</strong> {{$pe->address}}</small>
+        <a href="http://maps.apple.com/?q={{$pe->lat}},{{$pe->lng}}"><i class="fa fa-map-marker fa-2x" aria-hidden="true"></i></a>
       </div>
       <div class="panel-body">
-        <div class="meta-data">
-          abc
-        </div>
         <div>
           <div class="media">
-            <div class="media-left">
+{{--            <div class="media-left">
               <a href="#">
                 <img class="media-object" src="..." alt="..." width="80" height="80">
               </a>
-            </div>
+            </div>--}}
             <div class="media-body">
               <strong>Start date: </strong>{{$pe->start_date}} <br>
               <strong>End date: </strong>{{$pe->end_date}}<br>

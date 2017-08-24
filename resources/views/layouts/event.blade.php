@@ -17,6 +17,7 @@
  {{-- toastr --}}
  <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
   <link href="{{ mix('css/app.css') }}" rel="stylesheet">
+  <link rel="stylesheet" href="{{mix('css/event.css')}}">
   @yield('styles')
 </head>
 <body class="body_event">
@@ -44,6 +45,10 @@
       "showMethod": "fadeIn",
       "hideMethod": "fadeOut"
     }
+
+     $(document).ready(function(){
+         $('img').addClass('img-responsive');
+     })
  </script>
 @yield('scripts')
 </body>

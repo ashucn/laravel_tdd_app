@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Event;
 use App\Models\Event;
 use Carbon\Carbon;
 use Validator;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -52,6 +53,7 @@ class EventController extends Controller
         }
 
         $data['user_id'] = $request->user()->id;
+        $data['slug'] = Str::slug($data['title']) . '-' . uniqid(time());
 
         $event = new Event;
         $event->fill($data);

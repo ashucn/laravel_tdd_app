@@ -26,15 +26,18 @@ $factory->define(\App\User::class, function (Faker\Generator $faker) {
 $factory->define(\App\Models\Event::class, function (Faker\Generator $faker) {
     $start_date = \Carbon\Carbon::now()->addDays($faker->randomElement([1,2,3,4,5,6,7,8,9]));
     $end_date = $start_date->copy()->addDays($faker->randomElement([1,2,3,4,5,6,7,8,9]));
-
+    $title = $faker->sentence(5);
     return [
-        'title' => $faker->sentence(5),
+        'title' => $title,
         'description' => $faker->paragraph(5),
         'address' => $faker->address,
         'lat' => $faker->latitude,
         'lng' => $faker->longitude,
         'start_date' => $start_date->format('Y-m-d'),
         'end_date' => $end_date->format('Y-m-d'),
-        'user_id' => factory(\App\User::class)->create()->id,
+        'slug' => \Illuminate\Support\Str::slug($title) . '-' . uniqid(time()),
+        'user_id' => factory(\App\User::class)->create([
+            'password' => bcrypt('666666'),
+        ])->id,
     ];
 });

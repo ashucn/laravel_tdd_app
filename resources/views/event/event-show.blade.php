@@ -11,7 +11,7 @@
         <div class="panel-body">
           <div id="map"></div>
           <table class="table table-striped m-t-20">
-            <tr><td>Address</td><td><a href="http://maps.apple.com/?q={{$event->lat}},{{$event->lng}}">{{$event->address}}</a></td></tr>
+            <tr><td>Address</td><td><a href="http://maps.apple.com/?q={{$event->lat}},{{$event->lng}}">{{$event->address}} <i class="fa fa-map-marker fa-2x" aria-hidden="true"></i></a></td></tr>
             <tr><td>Start date</td><td>{{$event->start_date}}</td></tr>
             <tr><td>End date</td><td>{{$event->end_date}}</td></tr>
             <tr><td>Created by</td><td>{{$event->creator->name}}</td></tr>
@@ -44,9 +44,6 @@
       map: map
     });
   }
-  $(document).ready(function(){
-    $('img').addClass('img-responsive');
-  })
 </script>
 
 <script async defer src="https://maps.googleapis.com/maps/api/js?key={{env('GOOGLE_MAP_API_KEY')}}&callback=initMap"></script>
