@@ -33,3 +33,6 @@ vendor/bin/phpcs app --standard=PSR2
 - [vue2-google-maps](https://www.npmjs.com/package/vue2-google-maps)
 - [CKEditor](https://ckeditor.com/builder)
 
+#### Back-end package:
+
+- [laravel/passport](https://laravel.com/docs/5.4/passport)  
