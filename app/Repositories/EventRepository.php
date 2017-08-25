@@ -102,21 +102,21 @@ class EventRepository
         return $this->getById($id)->delete();
     }
 
-    public function getUpcomingEvents()
+    public function getUpcomingEvents($sort = 'desc', $sortColumn = 'start_date')
     {
 
         return $this->model
             ->where('end_date', '>', $this->today)
-            ->orderBy('start_date', 'desc')
+            ->orderBy($sortColumn, $sort)
             ->get();
     }
 
-    public function getPastEvents()
+    public function getPastEvents($sort = 'desc', $sortColumn = 'start_date')
     {
 
         return $this->model
             ->where('end_date', '<', $this->today)
-            ->orderBy('start_date', 'desc')
+            ->orderBy($sortColumn, $sort)
             ->limit(3)
             ->get();
     }

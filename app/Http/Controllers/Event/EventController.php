@@ -11,18 +11,17 @@ use App\Http\Controllers\Controller;
 
 class EventController extends Controller
 {
+
     protected $events;
 
     public function __construct(EventRepository $eventsRepository)
     {
         $this->events = $eventsRepository;
-
     }
 
     public function index()
     {
-        $upcomingEvents = $this->events->getUpcomingEvents();
-
+        $upcomingEvents = $this->events->getUpcomingEvents('desc', 'created_at');
         $pastEvents = $this->events->getPastEvents();
 
         return view('event.event-list', compact('upcomingEvents', 'pastEvents'));

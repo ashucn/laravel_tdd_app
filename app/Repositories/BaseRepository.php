@@ -112,7 +112,6 @@ trait BaseRepository
     public function save($model, $input)
     {
         $model->fill($input);
-
         $model->save();
 
         return $model;

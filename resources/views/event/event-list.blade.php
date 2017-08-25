@@ -28,7 +28,7 @@
             <div class="media-body">
               <strong>Start date: </strong>{{$ue->start_date}} <br>
               <strong>End date: </strong>{{$ue->end_date}}<br>
-              <strong>Created by: </strong>{{$ue->creator->name}}<br><br>
+              <strong>Created by: </strong>{{$ue->creator->name}} <small class="text-muted">{{$ue->created_at}}</small><br><br>
             {!! limit_words($ue->description, 30) !!}
             </div>
           </div>

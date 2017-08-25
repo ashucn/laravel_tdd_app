@@ -22,34 +22,12 @@
 </head>
 <body class="body_event">
 <div id="app">
-@include('includes.topnav')
-<div class="container">
-@yield('content')
+  @include('includes.topnav')
+  <div class="container">
+    @yield('content')
+  </div>
 </div>
-</div>
- <script>
-     toastr.options = {
-      "closeButton": false,
-      "debug": false,
-      "newestOnTop": true,
-      "progressBar": true,
-      "positionClass": "toast-bottom-right",
-      "preventDuplicates": false,
-      "onclick": null,
-      "showDuration": "300",
-      "hideDuration": "800",
-      "timeOut": "5000",
-      "extendedTimeOut": "1000",
-      "showEasing": "swing",
-      "hideEasing": "linear",
-      "showMethod": "fadeIn",
-      "hideMethod": "fadeOut"
-    }
-
-     $(document).ready(function(){
-         $('img').addClass('img-responsive');
-     })
- </script>
+<script src="/js/event.js"></script>
 @yield('scripts')
 </body>
 </html>
