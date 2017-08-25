@@ -32,7 +32,6 @@ class EventApiController extends Controller
             $type = 2;
         }
 
-
         return response(['type' => $type, ], 200);
     }
 }
