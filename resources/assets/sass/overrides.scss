@@ -31,3 +31,12 @@ body{
 #errormsg{
   padding-left: 40px;
 }
+
+.badge-default {
+  background-color: $gray-light;
+}
+
+.badge-success {
+  background-color: $brand-success;
+
+}

@@ -31,6 +31,8 @@
           <tr>
             <td>Participants</td>
             <td>
+              <span class="badge badge-default">{{count($event->participantUsers) + 1}}</span>
+              <a class="badge badge-success" href="#">{{$event->creator->name}}</a>
               @foreach($event->participantUsers as $p)
                 <a class="badge badge-info" href="#">{{$p->name}}</a>
               @endforeach
