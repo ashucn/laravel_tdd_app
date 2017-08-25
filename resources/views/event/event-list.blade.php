@@ -1,7 +1,9 @@
 @extends('layouts.event')
 
 @section('content')
-  <div class="col-md-6"></div>
+  <example></example>
+  <div class="col-md-6">
+  </div>
   <div class="col-md-6"><a href="{{route('event-add')}}" class="btn btn-primary pull-right m-r-10">Add Events</a></div>
 
   <div class="col-sm-6 ">
