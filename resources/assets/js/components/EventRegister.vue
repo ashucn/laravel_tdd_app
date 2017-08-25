@@ -23,14 +23,8 @@
                     .then(response => {
                         toastr.options.positionClass = "toast-bottom-right";
                         if (response.status == 200) {
-                            console.log(response.data)
-                            if (response.data.type == 2) {
-                                toastr.success(this.text + ' the event successfully!!')
-                                this.count++;
-                            } else {
-                                toastr.warning(this.text + ' the event successfully!!')
-                                this.count--;
-                            }
+                            this.count = response.data.type == 1 ? this.count - 1 : this.count + 1;
+                            toastr.success(this.text + ' the event successfully!!')
                             this.mode = this.mode == 'btn-danger' ? 'btn-success' : 'btn-danger'
                             this.text = this.text == 'Register' ? 'De-Register' : 'Register'
                         }

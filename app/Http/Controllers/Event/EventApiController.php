@@ -29,11 +29,11 @@ class EventApiController extends Controller
             $type = 1;
         } else {
             // 添加 2
-            $participant = $this->events->registerForEvent($event, $user);
+            $this->events->registerForEvent($event, $user);
             $type = 2;
         }
 
 
-        return response(['participant' => $participant, 'type' => $type], 200);
+        return response(['type' => $type, ], 200);
     }
 }
