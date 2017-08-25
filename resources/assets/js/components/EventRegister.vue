@@ -7,13 +7,14 @@
 
 <script>
     import {registerUrl} from './../config'
+
     export default {
         props: ['text', 'mode', 'eventId', 'count'],
         data() {
             return {}
         },
         methods: {
-            handleRegister(){
+            handleRegister() {
                 console.log(this.eventId)
                 let postDate = {
                     eventId: this.eventId
@@ -21,18 +22,19 @@
                 axios.post(registerUrl, postDate)
                     .then(response => {
                         toastr.options.positionClass = "toast-bottom-right";
-                        if(response.status == 200){
+                        if (response.status == 200) {
                             console.log(response.data)
-                            toastr.success(this.text + ' the event successfully!!')
-                            this.mode = this.mode=='btn-danger'? 'btn-success':'btn-danger'
-                            this.text = this.text=='Register'? 'De-Register':'Register'
-                            if(response.data[1]==2){
+                            if (response.data.type == 2) {
+                                toastr.success(this.text + ' the event successfully!!')
                                 this.count++;
                             } else {
+                                toastr.warning(this.text + ' the event successfully!!')
                                 this.count--;
                             }
+                            this.mode = this.mode == 'btn-danger' ? 'btn-success' : 'btn-danger'
+                            this.text = this.text == 'Register' ? 'De-Register' : 'Register'
                         }
-                        else{
+                        else {
                             toastr.error(this.text + ' the event failed...')
                         }
                     })

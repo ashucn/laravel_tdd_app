@@ -34,6 +34,6 @@ class EventApiController extends Controller
         }
 
 
-        return response([$participant, $type], 200);
+        return response(['participant' => $participant, 'type' => $type], 200);
     }
 }
