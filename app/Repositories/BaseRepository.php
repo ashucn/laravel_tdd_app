@@ -81,7 +81,7 @@ trait BaseRepository
      * Store a new record.
      *
      * @param  $input
-     * @return User
+     * @return Model
      */
     public function store($input)
     {
@@ -93,7 +93,7 @@ trait BaseRepository
      *
      * @param  $id
      * @param  $input
-     * @return User
+     * @return Model
      */
     public function update($id, $input)
     {
@@ -107,7 +107,7 @@ trait BaseRepository
      *
      * @param  $model
      * @param  $input
-     * @return User
+     * @return Model
      */
     public function save($model, $input)
     {

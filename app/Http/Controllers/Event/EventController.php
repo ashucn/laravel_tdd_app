@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Event;
 
 use App\Models\Event;
-use Carbon\Carbon;
+use App\Repositories\EventRepository;
 use Validator;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
@@ -11,16 +11,19 @@ use App\Http\Controllers\Controller;
 
 class EventController extends Controller
 {
+    protected $events;
+
+    public function __construct(EventRepository $eventsRepository)
+    {
+        $this->events = $eventsRepository;
+
+    }
+
     public function index()
     {
-        $today = Carbon::today()->format('Y-m-d');
-        $upcomingEvents = Event::where('end_date', '>', $today)
-            ->orderBy('start_date', 'desc')
-            ->get();
-        $pastEvents = Event::where('end_date', '<', $today)
-            ->orderBy('start_date', 'desc')
-            ->limit(3)
-            ->get();
+        $upcomingEvents = $this->events->getUpcomingEvents();
+
+        $pastEvents = $this->events->getPastEvents();
 
         return view('event.event-list', compact('upcomingEvents', 'pastEvents'));
     }
@@ -55,10 +58,7 @@ class EventController extends Controller
         $data['user_id'] = $request->user()->id;
         $data['slug'] = Str::slug($data['title']) . '-' . uniqid(time());
 
-        $event = new Event;
-        $event->fill($data);
-        $event->save();
-//        dd($event);
+        $this->events->store($data);
 
         return redirect(route('events'))->with('status', 'Add new event successfully');
     }

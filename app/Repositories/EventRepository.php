@@ -4,6 +4,7 @@ namespace App\Repositories;
 
 use App\Models\Event;
 use App\Repositories\BaseRepository;
+use Carbon\Carbon;
 
 class EventRepository
 {
@@ -11,10 +12,12 @@ class EventRepository
     use BaseRepository;
 
     protected $model;
+    protected $today;
 
     public function __construct(Event $event)
     {
         $this->model = $event;
+        $this->today = Carbon::today()->format('Y-m-d');
     }
 
     /**
@@ -97,5 +100,24 @@ class EventRepository
     public function destroy($id)
     {
         return $this->getById($id)->delete();
+    }
+
+    public function getUpcomingEvents()
+    {
+
+        return $this->model
+            ->where('end_date', '>', $this->today)
+            ->orderBy('start_date', 'desc')
+            ->get();
+    }
+
+    public function getPastEvents()
+    {
+
+        return $this->model
+            ->where('end_date', '<', $this->today)
+            ->orderBy('start_date', 'desc')
+            ->limit(3)
+            ->get();
     }
 }
