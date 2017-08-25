@@ -3,6 +3,7 @@
 namespace App\Repositories;
 
 use App\Models\Event;
+use App\Models\Participant;
 use App\Repositories\BaseRepository;
 use Carbon\Carbon;
 use Auth;
@@ -136,5 +137,13 @@ class EventRepository
             ->orderBy($sortColumn, $sort)
             ->limit(3)
             ->get();
+    }
+
+    public function registerForEvent($event, $user)
+    {
+        return Participant::create([
+            'user_id'  => $user->id,
+            'event_id' => $event->id,
+        ]);
     }
 }

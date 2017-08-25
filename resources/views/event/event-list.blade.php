@@ -25,8 +25,6 @@
               <div class="media-body">
                 <strong>Start date: </strong>{{$ue->start_date}} <br>
                 <strong>End date: </strong>{{$ue->end_date}}<br>
-                <strong>Participants: </strong><span
-                    class="badge badge-default">{{count($ue->participantUsers) + 1}}</span><br>
                 <strong>Created by: </strong>{{$ue->creator->name}}
                 <small class="text-muted">{{$ue->created_at}}</small>
                 @if(Auth::id() == $ue->user_id)
@@ -36,9 +34,11 @@
                 <br><br>
                 {!! limit_words($ue->description, 30) !!}<br>
                 @if($ue->user === null && Auth::id() != $ue->user_id)
-                  <event-register text="Register" mode="btn btn-success m-t-15" event-id="{{$ue->id}}"></event-register>
+                  <event-register text="Register" mode="btn-success" event-id="{{$ue->id}}" count="{{count($ue->participantUsers) + 1}}"></event-register>
                 @elseif(Auth::id() != $ue->user_id)
-                  <event-register text="De-Register" mode="btn btn-danger m-t-15" event-id="{{$ue->id}}"></event-register>
+                  <event-register text="De-Register" mode="btn-danger" event-id="{{$ue->id}}" count="{{count($ue->participantUsers) + 1}}"></event-register>
+                @else
+                  <span class="badge badge-default pull-right">{{count($ue->participantUsers) + 1}}</span><br>
                 @endif
               </div>
             </div>

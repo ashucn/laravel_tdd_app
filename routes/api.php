@@ -18,8 +18,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::group(['middleware'=>'auth:api', 'prefix'=>'v1', 'namespace' => 'Event'],function(){
-/*    Route::post('check', function(){
-       return request()->all();
-    });*/
     Route::post('handleRegister', 'EventApiController@handleRegister');
 });
