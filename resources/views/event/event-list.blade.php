@@ -14,8 +14,9 @@
         <div class="panel-heading">
           <h3><a href="{{route('event-view', $ue->slug)}}">#{{$ue->id}} {{$ue->title}}</a></h3>
           <small><strong>Address:</strong> {{$ue->address}}</small>
-          <a href="http://maps.apple.com/?q={{$ue->lat}},{{$ue->lng}}"><i class="fa fa-map-marker fa-2x"
-                                                                          aria-hidden="true"></i></a>
+          <a href="http://maps.google.com/?q={{$ue->lat}},{{$ue->lng}}">
+            <i class="fa fa-map-marker fa-2x" aria-hidden="true"></i>
+          </a>
         </div>
         <div class="panel-body">
           <div>
@@ -34,9 +35,11 @@
                 <br><br>
                 {!! limit_words($ue->description, 30) !!}<br>
                 @if($ue->user === null && Auth::id() != $ue->user_id)
-                  <event-register text="Register" mode="btn-success" event-id="{{$ue->id}}" count="{{count($ue->participantUsers) + 1}}"></event-register>
+                  <event-register text="Register" mode="btn-success" event-id="{{$ue->id}}"
+                                  count="{{count($ue->participantUsers) + 1}}"></event-register>
                 @elseif(Auth::id() != $ue->user_id)
-                  <event-register text="De-Register" mode="btn-danger" event-id="{{$ue->id}}" count="{{count($ue->participantUsers) + 1}}"></event-register>
+                  <event-register text="De-Register" mode="btn-danger" event-id="{{$ue->id}}"
+                                  count="{{count($ue->participantUsers) + 1}}"></event-register>
                 @else
                   <span class="badge badge-default pull-right">{{count($ue->participantUsers) + 1}}</span><br>
                 @endif
@@ -97,9 +100,9 @@
   <script>
       var app = new Vue({
           el: '#app',
-          data :{
+          data: {
               lat: '34.0501695',
-              lng:'-118.1663621',
+              lng: '-118.1663621',
           }
       });
   </script>

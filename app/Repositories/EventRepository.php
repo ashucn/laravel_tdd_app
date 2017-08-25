@@ -115,6 +115,8 @@ class EventRepository
             'e.end_date',
             'e.user_id',
             'e.slug',
+            'e.lat',
+            'e.lng',
             'p.user_id as user',
         ];
 

@@ -20,7 +20,6 @@ class EventApiController extends Controller
     public function handleRegister(Request $request)
     {
         $user = $request->user();
-
         $event = $this->events->getById($request->input('eventId'));
         $participant = Participant::where(['user_id' => $user->id, 'event_id' => $event->id])->first();
         if ($participant) {
