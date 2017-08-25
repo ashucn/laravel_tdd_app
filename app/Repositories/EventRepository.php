@@ -126,7 +126,6 @@ class EventRepository
             ->where('e.end_date', '>', $this->today)
             ->orderBy('e.' . $sortColumn, $sort)
             ->get();
-
     }
 
     public function getPastEvents($sort = 'desc', $sortColumn = 'start_date')

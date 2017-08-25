@@ -7,6 +7,7 @@ use App\User;
 
 class Event extends Model
 {
+
     protected $guarded = [];
 
     protected $fillable = [
@@ -18,8 +19,9 @@ class Event extends Model
         'start_date',
         'end_date',
         'user_id',
-        'slug'
+        'slug',
     ];
+
     // overright parent method
     public function getRouteKeyName()
     {
@@ -31,9 +33,10 @@ class Event extends Model
     {
         return $this->belongsTo(User::class, 'user_id');
     }
+
     //
     public function participantUsers()
     {
-        return $this->belongsToMany('App\User', 'participants','event_id','user_id');
+        return $this->belongsToMany('App\User', 'participants', 'event_id', 'user_id');
     }
 }
