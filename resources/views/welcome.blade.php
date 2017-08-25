@@ -87,7 +87,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel Tdd Event App
+                    Ashu Event App Demo
                 </div>
 
                 <div class="links">
