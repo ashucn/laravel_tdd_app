@@ -29,5 +29,6 @@
 </div>
 <script src="/js/event.js"></script>
 @yield('scripts')
+
 </body>
 </html>
