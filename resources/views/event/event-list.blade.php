@@ -20,12 +20,14 @@
         </div>
         <div>
           <div class="media">
+            {{--<pre>{{dump($ue->toArray())}}</pre>--}}
 {{--            <div class="media-left">
               <a href="#">
                 <img class="media-object" src="..." alt="..." width="80" height="80">
               </a>
             </div>--}}
             <div class="media-body">
+              <strong>Participants: </strong>{{count($ue->participantUsers)}}
               <strong>Start date: </strong>{{$ue->start_date}} <br>
               <strong>End date: </strong>{{$ue->end_date}}<br>
               <strong>Created by: </strong>{{$ue->creator->name}} <small class="text-muted">{{$ue->created_at}}</small><br><br>

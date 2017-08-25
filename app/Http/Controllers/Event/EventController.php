@@ -22,6 +22,7 @@ class EventController extends Controller
     public function index()
     {
         $upcomingEvents = $this->events->getUpcomingEvents('desc', 'created_at');
+//        dd($upcomingEvents);
         $pastEvents = $this->events->getPastEvents();
 
         return view('event.event-list', compact('upcomingEvents', 'pastEvents'));
@@ -29,6 +30,8 @@ class EventController extends Controller
 
     public function show(Event $event)
     {
+        $event = $this->events->getById($event->id);
+
         return view('event.event-show', compact('event'));
     }
 

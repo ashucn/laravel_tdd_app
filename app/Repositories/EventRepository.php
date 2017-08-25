@@ -5,6 +5,7 @@ namespace App\Repositories;
 use App\Models\Event;
 use App\Repositories\BaseRepository;
 use Carbon\Carbon;
+use Auth;
 
 class EventRepository
 {
@@ -42,7 +43,7 @@ class EventRepository
      */
     public function getById($id)
     {
-        return $this->model->withoutGlobalScope(DraftScope::class)->findOrFail($id);
+        return $this->model->where('id', $id)->with('participantUsers')->first();
     }
 
     /**
@@ -104,11 +105,28 @@ class EventRepository
 
     public function getUpcomingEvents($sort = 'desc', $sortColumn = 'start_date')
     {
+        $select = [
+            'e.id',
+            'e.title',
+            'e.description',
+            'e.address',
+            'e.start_date',
+            'e.end_date',
+            'e.user_id',
+            'e.slug',
+            'p.user_id as user',
+        ];
 
-        return $this->model
-            ->where('end_date', '>', $this->today)
-            ->orderBy($sortColumn, $sort)
+        return $this->model->select($select)
+            ->from('events as e')
+            ->leftJoin('participants as p', function ($query) {
+                $query->on('p.event_id', '=', 'e.id');
+                $query->where('p.user_id', Auth::id());
+            })
+            ->where('e.end_date', '>', $this->today)
+            ->orderBy('e.' . $sortColumn, $sort)
             ->get();
+
     }
 
     public function getPastEvents($sort = 'desc', $sortColumn = 'start_date')
