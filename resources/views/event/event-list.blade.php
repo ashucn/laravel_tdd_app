@@ -9,7 +9,7 @@
   @include('includes.message.success')
   <h1>Upcoming Events</h1>
   @foreach($upcomingEvents as $ue)
-    <div class="panel panel-default">
+    <div class="panel panel-default" >
       <div class="panel-heading">
         <h3><a href="{{route('event-view', $ue->slug)}}">#{{$ue->id}} {{$ue->title}}</a></h3>
         <small><strong>Address:</strong> {{$ue->address}}</small>
@@ -20,18 +20,22 @@
         </div>
         <div>
           <div class="media">
-            {{--<pre>{{dump($ue->toArray())}}</pre>--}}
-{{--            <div class="media-left">
-              <a href="#">
-                <img class="media-object" src="..." alt="..." width="80" height="80">
-              </a>
-            </div>--}}
             <div class="media-body">
-              <strong>Participants: </strong>{{count($ue->participantUsers)}}
               <strong>Start date: </strong>{{$ue->start_date}} <br>
               <strong>End date: </strong>{{$ue->end_date}}<br>
-              <strong>Created by: </strong>{{$ue->creator->name}} <small class="text-muted">{{$ue->created_at}}</small><br><br>
-            {!! limit_words($ue->description, 30) !!}
+              <strong>Participants: </strong><span class="badge">{{count($ue->participantUsers) + 1}}</span><br>
+              <strong>Created by: </strong>{{$ue->creator->name}} <small class="text-muted">{{$ue->created_at}}</small>
+              @if(Auth::id() == $ue->user_id)
+              <span class="badge badge-warning">I'm Creator!</span>
+              @endif
+
+              <br><br>
+            {!! limit_words($ue->description, 30) !!}<br>
+              @if($ue->user === null && Auth::id() != $ue->user_id)
+              <a href="#" class="btn btn-success m-t-20">Register</a>
+                @elseif(Auth::id() != $ue->user_id)
+                <a href="#" class="btn btn-danger m-t-20">De-Register</a>
+              @endif
             </div>
           </div>
 
@@ -41,7 +45,7 @@
     </div>
   @endforeach
 </div>
-
+{{--past events--}}
 <div class="col-sm-6">
 
   <h1>Past Events</h1>
