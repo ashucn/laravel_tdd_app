@@ -18,10 +18,6 @@
     export default {
         mounted() {
             console.log('Component mounted.')
-            axios.post('/api/v1/check',{name:"ashu"})
-                .then(function (response) {
-                    console.log(response)
-                })
         }
     }
 </script>

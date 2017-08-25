@@ -1,7 +1,6 @@
 @extends('layouts.event')
 
 @section('content')
-  <example></example>
   <div class="col-md-6">
   </div>
   <div class="col-md-6"><a href="{{route('event-add')}}" class="btn btn-primary pull-right m-r-10">Add Events</a></div>
@@ -37,9 +36,9 @@
                 <br><br>
                 {!! limit_words($ue->description, 30) !!}<br>
                 @if($ue->user === null && Auth::id() != $ue->user_id)
-                  <a href="#" class="btn btn-success m-t-20">Register</a>
+                  <event-register text="Register" mode="btn btn-success m-t-15" event-id="{{$ue->id}}"></event-register>
                 @elseif(Auth::id() != $ue->user_id)
-                  <a href="#" class="btn btn-danger m-t-20">De-Register</a>
+                  <event-register text="De-Register" mode="btn btn-danger m-t-15" event-id="{{$ue->id}}"></event-register>
                 @endif
               </div>
             </div>
@@ -92,3 +91,17 @@
     @endforeach
   </div>
 @endsection
+
+@section('scripts')
+  <script src="{{mix('/js/eventRegister.js')}}"></script>
+  <script>
+      var app = new Vue({
+          el: '#app',
+          data :{
+              lat: '34.0501695',
+              lng:'-118.1663621',
+          }
+      });
+  </script>
+@endsection
+
