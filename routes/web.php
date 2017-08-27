@@ -1,15 +1,6 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+use Illuminate\Http\Request;
 
 Route::get('/', function () {
     return view('welcome');
@@ -24,6 +15,16 @@ Route::group(['middleware' => 'auth', 'prefix' => 'events', 'namespace' => 'Even
     Route::post('/store', 'EventController@store')->name('event-store');
 });
 
+Route::get('/user', function () {
+    return view('user.user-profile');
+});
+
+Route::group(['middleware' => 'auth', 'prefix' => 'user', 'namespace' => 'User'], function () {
+});
+
+Route::post('files/upload', function (Request $request) {
+    return response(['message'=>'ok'], 200);
+});
 
 Route::get('/home', function () {
     return redirect('/');
