@@ -12,6 +12,8 @@
 
   <!-- Styles -->
   <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+  <!-- Scripts -->
+  @include('includes.js-csrf-token')
 </head>
 <body>
 <div id="app">

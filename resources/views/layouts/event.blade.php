@@ -14,13 +14,7 @@
   <!-- Styles -->
   <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
   <!-- Scripts -->
-  <script>
-      window.Laravel = {
-          csrfToken: '{{ csrf_token() }}',
-          basePath: '{{ url('/') }}'
-      }
-      //in console, check basePath:  window.Laravel.basepath  -> http://localhost:9000
-  </script>
+  @include('includes.js-csrf-token')
   <script src="{{ mix('js/app.js') }}"></script>
   {{-- toastr --}}
   <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
