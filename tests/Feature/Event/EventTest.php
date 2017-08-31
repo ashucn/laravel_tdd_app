@@ -80,7 +80,7 @@ class EventTest extends TestCase
             ->assertSee($title);
     }
 
-    
+
     public function confirm_fields_are_required_to_create_event()
     {
 
