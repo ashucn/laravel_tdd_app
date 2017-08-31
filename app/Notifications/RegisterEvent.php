@@ -13,18 +13,13 @@ class RegisterEvent extends Notification
 {
     use Queueable;
 
-    protected $user;
-    protected $event;
-
     /**
      * Create a new notification instance.
      *
      * @return void
      */
-    public function __construct(User $user, Event $event)
+    public function __construct()
     {
-        $this->user = $user;
-        $this->event = $event;
     }
 
     /**

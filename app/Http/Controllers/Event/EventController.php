@@ -11,7 +11,6 @@ use App\Http\Controllers\Controller;
 
 class EventController extends Controller
 {
-
     protected $events;
 
     public function __construct(EventRepository $eventsRepository)

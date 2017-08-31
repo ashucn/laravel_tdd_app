@@ -55,7 +55,7 @@ class EventTest extends TestCase
 //            ->assertSeeText($event->creator->name);
     }
 
-    /** @test */
+
     public function a_user_can_create_an_event_and_view_it()
     {
         $faker = Factory::create();
@@ -80,7 +80,7 @@ class EventTest extends TestCase
             ->assertSee($title);
     }
 
-    /** @test */
+    
     public function confirm_fields_are_required_to_create_event()
     {
 
