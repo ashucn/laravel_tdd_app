@@ -1,6 +1,3 @@
-<?php
-$url = Request::route()->getName();
-?>
 <nav class="navbar navbar-default navbar-fixed-top">
   <div class="container">
     <div class="navbar-header">

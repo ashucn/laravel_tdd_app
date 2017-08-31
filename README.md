@@ -32,8 +32,9 @@ vendor/bin/phpcs app --standard=PSR2
 
 - [vue2-google-maps](https://www.npmjs.com/package/vue2-google-maps)
 - [CKEditor](https://ckeditor.com/builder)
-- [Croppie](https://github.com/foliotek/croppie)   
+- [Croppie](https://github.com/foliotek/croppie)
+- [vue-croppie](https://github.com/jofftiquez/vue-croppie)
 
 #### Back-end package:
 
-- [laravel/passport](https://laravel.com/docs/5.4/passport)  
+- [laravel/passport](https://laravel.com/docs/5.4/passport)
