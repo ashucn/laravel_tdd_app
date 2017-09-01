@@ -20,6 +20,7 @@
       <!-- Left Side Of Navbar -->
       <ul class="nav navbar-nav">
         <li @if(Request::is('events*')) class="active" @endif ><a href="{{route('events')}}">Events</a></li>
+        <li><a ><clock></clock></a></li>
       </ul>
 
       <!-- Right Side Of Navbar -->
