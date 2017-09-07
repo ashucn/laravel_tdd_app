@@ -4,8 +4,9 @@ namespace App\Listeners;
 
 use App\Events\EventRegistered;
 use App\Jobs\RegisteredEventConfirmEmail;
+use Illuminate\Contracts\Queue\ShouldQueue;
 
-class EventRegisteredListener
+class EventRegisteredListener implements ShouldQueue
 {
     /**
      * Create the event listener.
