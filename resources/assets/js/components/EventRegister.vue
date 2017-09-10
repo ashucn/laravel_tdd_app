@@ -48,6 +48,10 @@
                             toastr.error(this.origin_text + ' the event failed...')
                         }
                     })
+                  .catch(function (error) {
+                    console.log(error);
+                            toastr.error(this.origin_text + ' refresh the page...')
+                  })
             }
         },
         mounted() {
