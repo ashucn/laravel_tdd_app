@@ -21,7 +21,7 @@
                 this.dateTimeString = moment().format('ddd h:mm:ss A');
             }, 1000);
             this.dateTimeString = moment().format('ddd h:mm:ss A')
-            this.yearMonthString = moment().format('MMMM YYYY')
+            this.yearMonthString = moment().format('MM/DD/YYYY')
         },
         mounted() {
             console.log('Component mounted.')

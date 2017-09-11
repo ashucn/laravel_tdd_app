@@ -3,10 +3,11 @@
 namespace App\Repositories;
 
 use App\Models\Event;
+use App\Events\EventRegistered;
 use App\Models\Participant;
 use App\Repositories\BaseRepository;
-use Carbon\Carbon;
 use Auth;
+use Carbon\Carbon;
 
 class EventRepository
 {
@@ -143,9 +144,13 @@ class EventRepository
 
     public function registerForEvent($event, $user)
     {
-        return Participant::create([
+        $participant = Participant::create([
             'user_id'  => $user->id,
             'event_id' => $event->id,
         ]);
+
+        event(new EventRegistered($event, $user));
+
+        return true;
     }
 }

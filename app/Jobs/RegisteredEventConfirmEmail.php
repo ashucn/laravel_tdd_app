@@ -14,10 +14,10 @@ use Illuminate\Support\Facades\Mail;
 
 class RegisteredEventConfirmEmail implements ShouldQueue
 {
+    use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
+
     protected $event;
     protected $user;
-
-    use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
     /**
      * Create a new job instance.
@@ -38,7 +38,6 @@ class RegisteredEventConfirmEmail implements ShouldQueue
      */
     public function handle()
     {
-
         Mail::to($this->user)->send(new RegisteredEventConfirm($this->event, $this->user));
     }
 }

@@ -34,12 +34,10 @@
   <div class="col-md-6">
     <div class="panel panel-default">
       <div class="panel-heading">* Event Address</div>
-
       <div class="panel-body">
         <google-maps></google-maps>
       </div>
     </div>
-
     <button type="submit" class="btn btn-success btn-block btn-lg m-b-30">Submit</button>
   </div>
 </form>
