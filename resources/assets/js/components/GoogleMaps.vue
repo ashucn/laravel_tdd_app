@@ -29,10 +29,11 @@
 
 <script>
 export default {
+    props: ['lat', 'lng'],
     data () {
       return {
-        location: {  lat: 34.05, lng: -118.22, event_address: ""},
-        markers: [{lat: 34.05, lng: -118.22}]
+        location: {  lat: this.lat, lng: this.lng, event_address: ""},
+        markers: [{lat: this.lat, lng: this.lat}]
       }
     },
     methods:{
@@ -53,6 +54,9 @@ export default {
             lng: position.lng()
           }
         }
+    },
+    created: function(){
+      // console.log(this.lat);
     },
     mounted() {
         console.log('Google Maps Component mounted.')

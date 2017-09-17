@@ -35,7 +35,7 @@
     <div class="panel panel-default">
       <div class="panel-heading">* Event Address</div>
       <div class="panel-body">
-        <google-maps></google-maps>
+        <google-maps :lat='lat' :lng='lng'></google-maps>
       </div>
     </div>
     <button type="submit" class="btn btn-success btn-block btn-lg m-b-30">Submit</button>
@@ -50,8 +50,11 @@
       var app = new Vue({
           el: '#app',
           data :{
-              lat: '34.0501695',
-              lng:'-118.1663621',
+              lat: 34.0501695,
+              lng: -118.1663621,
+          },
+          created: function(){
+            // console.log(this.lat);
           }
       });
       CKEDITOR.replace( 'event_description' , {
