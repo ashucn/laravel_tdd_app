@@ -29,11 +29,12 @@
 
 <script>
 export default {
-    props: ['lat', 'lng'],
+    props: ['lat', 'lng', 'title'],
     data () {
       return {
         location: {  lat: this.lat, lng: this.lng, event_address: ""},
-        markers: [{lat: this.lat, lng: this.lat}]
+        markers: [{lat: this.lat, lng: this.lat}],
+        location_title: this.title
       }
     },
     methods:{

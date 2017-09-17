@@ -29,7 +29,7 @@ class EventController extends Controller
 
     public function show(Event $event)
     {
-        $event = $this->events->getById($event->id);
+        // $event = $this->events->getById($event->id);
 
         return view('event.event-show', compact('event'));
     }

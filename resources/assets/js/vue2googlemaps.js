@@ -1,3 +1,4 @@
+console.log('vue2googlemaps.js')
 import * as VueGoogleMaps from 'vue2-google-maps'
 Vue.use(VueGoogleMaps, {
     load: {

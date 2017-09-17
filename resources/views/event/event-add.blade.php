@@ -51,7 +51,7 @@
           el: '#app',
           data :{
               lat: 34.0501695,
-              lng: -118.1663621,
+              lng: -118.1663621
           },
           created: function(){
             // console.log(this.lat);

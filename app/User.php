@@ -46,4 +46,17 @@ class User extends Authenticatable
     {
         return $this->belongsToMany('App\Models\Event', 'participants', 'user_id', 'event_id');
     }
+
+    // helper: file
+    public function removeCurrentProfilePic($user)
+    {
+        if ($user->avatar != '') {
+            $url = $user->avatar;
+            $fileName = explode('/', $url);
+            $fileName = $fileName[count($fileName) - 1];
+            if (file_exists(public_path('uploads/avatar/') . $fileName)) {
+                unlink(public_path('uploads/avatar/') . $fileName);
+            }
+        }
+    }
 }

@@ -9,6 +9,7 @@ use App\Repositories\UserRepository;
 
 class UserApiController extends Controller
 {
+
     protected $users;
 
     public function __construct(UserRepository $userRepository)
@@ -30,6 +31,8 @@ class UserApiController extends Controller
             mkdir($path, 0755, true);
         }
         file_put_contents($path . $imageName, $upload_file);
+
+        $user->removeCurrentProfilePic($user);
 
         $imageUrl = url('uploads/avatar/' . $imageName);
         $user->avatar = $imageUrl;

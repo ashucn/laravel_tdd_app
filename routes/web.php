@@ -15,9 +15,7 @@ Route::group(['middleware' => 'auth', 'prefix' => 'events', 'namespace' => 'Even
     Route::post('/store', 'EventController@store')->name('event-store');
 });
 
-Route::get('/user', function () {
-    return view('user.user-profile');
-});
+Route::view('/profile', 'user.user-profile')->name('my-profile');
 
 Route::group(['middleware' => 'auth', 'prefix' => 'user', 'namespace' => 'User'], function () {
 });

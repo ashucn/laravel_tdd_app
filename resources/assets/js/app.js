@@ -23,3 +23,5 @@ const app = new Vue({
     el: '#app'
 });
 */
+
+Vue.component('clock', require('./components/Clock.vue'));
