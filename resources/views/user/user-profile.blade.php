@@ -15,16 +15,16 @@
 <hr>
               <div class="form-group">
                 <label for="exampleInputEmail1">Email address</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="{{Auth::user()->email}}" disabled="">
               </div>
               <div class="form-group">
-                <label for="exampleInputPassword1">Password</label>
-                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                <label for="exampleInputPassword1">Nickname</label>
+                <input type="text" class="form-control" id="exampleInputPassword1" placeholder="{{Auth::user()->name}}">
               </div>
           </div>
       </div>
   </div>
-{{--Google maps--}}
+  {{--Google maps--}}
   <div class="col-md-6">
     <div class="panel panel-default">
       <div class="panel-heading">* Location</div>
