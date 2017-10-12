@@ -57,7 +57,7 @@ class UserRepository
      */
     public function update($id, $input)
     {
-        $this->model = $this->model->withoutGlobalScope(DraftScope::class)->findOrFail($id);
+        $this->model = $this->model->findOrFail($id);
 
         return $this->save($this->model, $input);
     }
