@@ -5,9 +5,7 @@ $ npm install
 $ touch .env  
 // and modify .env file, using sqlite as well 
 $ touch database/database.sqlite  
-$ php artisan migrate  
-$ php artisan db:seed  
-$ php artisan passport:install
+$ php artisan events:install
 ```` 
   
 ## How to play github online testing??
@@ -41,7 +39,7 @@ vendor/bin/phpcs app --standard=PSR2
 
 ## Resources  
 
-#### Front-end Plugins:
+#### Front-end Plugins:touc
 - [vue2-google-maps](https://www.npmjs.com/package/vue2-google-maps)
 - [CKEditor](https://ckeditor.com/builder)
 - [Croppie](https://github.com/foliotek/croppie)
