@@ -1,11 +1,15 @@
-composer install
-npm install
-touch .env
-// and modify .env file, and using sqlite
-touch database/database.sqlite
-php artisan migrate
-php artisan db:seed
-
+## Setup project: 
+````
+$ composer install  
+$ npm install  
+$ touch .env  
+// and modify .env file, and using sqlite  
+$ touch database/database.sqlite  
+$ php artisan migrate  
+$ php artisan db:seed  
+$ php artisan passport:install
+```` 
+  
 ## How to play github online testing??
 
 touch .travis.yml
@@ -35,9 +39,9 @@ vendor/bin/phpunit
 vendor/bin/phpcs app --standard=PSR2
 ````
 
+## Resources  
 
 #### Front-end Plugins:
-
 - [vue2-google-maps](https://www.npmjs.com/package/vue2-google-maps)
 - [CKEditor](https://ckeditor.com/builder)
 - [Croppie](https://github.com/foliotek/croppie)
@@ -45,5 +49,9 @@ vendor/bin/phpcs app --standard=PSR2
 - [moment](https://momentjs.com/)
 
 #### Back-end package:
-
 - [laravel/passport](https://laravel.com/docs/5.4/passport)
+
+
+## Others     
+  
+  https://laravel.com/docs/5.5/passport#consuming-your-api-with-javascript
