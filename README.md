@@ -3,7 +3,7 @@
 $ composer install  
 $ npm install  
 $ touch .env  
-// and modify .env file, and using sqlite  
+// and modify .env file, using sqlite as well 
 $ touch database/database.sqlite  
 $ php artisan migrate  
 $ php artisan db:seed  

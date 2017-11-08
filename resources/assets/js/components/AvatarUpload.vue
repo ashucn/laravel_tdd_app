@@ -3,7 +3,7 @@
     <div id="croppie"></div>
     <div id="upload-wrapper">
       <button class="btn btn-primary btn-sm"
-        v-on:click="modalVisible = true">
+        v-on:click="showModal">
         <i class="fa fa-camera"></i> Upload image
       </button>
 
@@ -54,6 +54,9 @@ console.log("uploadProfilePic", uploadProfilePic);
       }
     },
     methods: {
+        showModal (){
+            this.modalVisible = this.modalVisible == true ? false : true;
+        },
       uploadFile () {
         this.canUpload = false
         this.button = {
@@ -120,7 +123,7 @@ console.log("uploadProfilePic", uploadProfilePic);
   }
 </script>
 
-<style lang="css">
+<style lang="scss">
   .Image-upload {
     .Modal {
       border-top: 1px solid #f4f4f4;
@@ -134,7 +137,7 @@ console.log("uploadProfilePic", uploadProfilePic);
     }
     .input-file {
       text-align: left;
-      width: 50%;
+      width: 220px;
       margin: 0px auto;
       margin-bottom: 20px;
     }
