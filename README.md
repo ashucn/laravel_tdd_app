@@ -1,3 +1,11 @@
+composer install
+npm install
+touch .env
+// and modify .env file, and using sqlite
+touch database/database.sqlite
+php artisan migrate
+php artisan db:seed
+
 ## How to play github online testing??
 
 touch .travis.yml
@@ -33,8 +41,8 @@ vendor/bin/phpcs app --standard=PSR2
 - [vue2-google-maps](https://www.npmjs.com/package/vue2-google-maps)
 - [CKEditor](https://ckeditor.com/builder)
 - [Croppie](https://github.com/foliotek/croppie)
-- [vue-croppie](https://github.com/jofftiquez/vue-croppie)  
-- [moment](https://momentjs.com/)    
+- [vue-croppie](https://github.com/jofftiquez/vue-croppie)
+- [moment](https://momentjs.com/)
 
 #### Back-end package:
 

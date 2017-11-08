@@ -27,12 +27,12 @@ class EventApiController extends Controller
             // 删除 1
             $participant->delete();
             $type = 1;
-            event(new EventDeRegistered($event, $user));
+            // event(new EventDeRegistered($event, $user));
         } else {
             // 添加 2
             $this->events->registerForEvent($event, $user);
             $type = 2;
-            event(new EventRegistered($event, $user));
+            // event(new EventRegistered($event, $user));
         }
 
         return response(['type' => $type, ], 200);
