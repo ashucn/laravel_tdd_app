@@ -11,7 +11,6 @@ use Carbon\Carbon;
 
 class EventRepository
 {
-
     use BaseRepository;
 
     protected $model;
@@ -33,7 +32,6 @@ class EventRepository
      */
     public function page($number = 10, $sort = 'desc', $sortColumn = 'created_at')
     {
-
         return $this->model->orderBy($sortColumn, $sort)->paginate($number);
     }
 
@@ -71,7 +69,6 @@ class EventRepository
      */
     public function getBySlug($slug)
     {
-
         $event = $this->model->where('slug', $slug)->firstOrFail();
 
         return $event;
@@ -134,7 +131,6 @@ class EventRepository
 
     public function getPastEvents($sort = 'desc', $sortColumn = 'start_date')
     {
-
         return $this->model
             ->where('end_date', '<', $this->today)
             ->orderBy($sortColumn, $sort)
@@ -149,7 +145,7 @@ class EventRepository
             'event_id' => $event->id,
         ]);
 
-        event(new EventRegistered($event, $user));
+        // event(new EventRegistered($event, $user));
 
         return true;
     }
