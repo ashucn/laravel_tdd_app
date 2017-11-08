@@ -62,6 +62,11 @@
             .m-b-md {
                 margin-bottom: 30px;
             }
+          .subtitle{
+            font-size: 22px;
+            color: #d0d0d0;
+            margin-bottom: 50px;
+          }
         </style>
     </head>
     <body>
@@ -89,6 +94,7 @@
                 <div class="title m-b-md">
                     Ashu Event App (Demo)
                 </div>
+              <div class="subtitle">Create your own group and meet people near you who share your interests.</div>
 
                 <div class="links">
                   <a href="https://github.com/ashucn/laravel_tdd_app" target="_blank"> <i class="fa fa-github"></i> Github</a> <a
