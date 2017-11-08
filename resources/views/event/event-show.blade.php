@@ -42,6 +42,7 @@
 
         <div>
           <h2><strong>Description</strong></h2>
+          {{env('GOOGLE_MAP_API_KEY')}} <br>
           {!!$event->description!!}
         </div>
 
